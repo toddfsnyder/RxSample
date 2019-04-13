@@ -1,0 +1,48 @@
+<p>
+  sample works!
+</p>
+
+<div class="row">
+  <div class="col-6">
+    <select (change)="changeCompany($event.target.value)" multiple style="width: 200px;">
+      <option *ngFor="let company of model.companies" [value]="company.id">
+        {{company.name}}
+      </option>
+    </select>
+  </div>
+</div>
+
+
+<div class="row" style="margin-top: 10px;">
+    <div class="col-12">
+        <label for="companyName">Company Name: </label>
+        <input id="companyName" type="text" [(ngModel)]="selectedCompany.name">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <label for="companyCity">Company City: </label>
+        <input id="companyCity" type="text" [(ngModel)]="selectedCompany.city">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <label for="companyState">Company State: </label>
+        <input id="companyState" type="text" [(ngModel)]="selectedCompany.state">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12">
+        <label for="companyPostalCode">Company Postal Code: </label>
+        <input id="companyPostalCode" type="text" [(ngModel)]="selectedCompany.postalCode">
+    </div>
+</div>
+
+<div class="row" style="margin-top: 10px;">
+    <div class="col-6">
+        <button (click)="loadData()" > Load Data</button>
+    </div>
+</div>
